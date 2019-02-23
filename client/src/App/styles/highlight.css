@@ -1,0 +1,43 @@
+.highlight-container{
+  display:flex;
+  justify-content:space-between;
+  margin:auto;
+  padding:30px;
+  background: #494a4c;
+}
+
+.highlight-box{
+  display:flex;
+  text-align:center;
+  justify-content:flex-start;
+  width:43%;
+}
+
+.highlight-box-right{
+  justify-content:flex-end;
+}
+
+.highlight-box table{
+  color:#eee;
+  background:#38393a;
+  border-collapse: collapse;
+  width:100%;
+}
+
+.highlight-box table, td, tr{
+  border-style:solid;
+  border-width:2px;
+  border-color:#494a4c;
+}
+
+.highlight-box td{
+  padding:2px;
+}
+
+.fa-times-circle{
+  color:#ff6060;
+}
+
+.fa-check{
+  color:#60ff60;
+}

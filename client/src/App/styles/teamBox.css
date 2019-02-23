@@ -1,0 +1,74 @@
+.score-container{
+  display:flex;
+  justify-content:space-between;
+  margin:auto;
+  padding:20px;
+  background: linear-gradient(to bottom, #494a4c 0%,#494a4c 50%,#343537 51%,#343537 100%);
+}
+
+.TeamBox{
+  display:flex;
+  justify-content:space-between;
+  text-align:center;
+  align-items:stretch;
+  height:68px;
+  width:45%;
+  border-radius:3px 3px 15px 3px;
+  border-style:solid;
+  border-width:1px;
+}
+.TeamBox-right{
+  flex-direction:row-reverse;
+  border-radius:3px 3px 3px 15px;
+}
+
+.team-logo{
+  order:0;
+  text-align: center;
+  width: 68px;
+  background: #fff;
+  border-radius: 3px 0px 0px 3px;
+  padding: 4px;
+}
+
+.team-logo-right{
+  border-radius: 0px 3px 3px 0px;
+}
+
+.logo-image{
+  height:100%;
+}
+
+.team-info{
+  padding:2px;
+  font-weight:bold;
+  font-size:large;
+  padding:5px;
+  display:table-cell;
+  vertical-align:middle;
+  font-family: "Pill-Gothic-Bold, Arial, sans-serif";
+  text-transform:uppercase;
+  color: #fff;
+  order:1;
+  flex-grow:1;
+  background:rgba(0, 35, 150, 0.3);
+}
+.team-info-right{
+  background:rgba(150, 0, 0, 0.3);
+}
+
+.team-score{
+  order:2;
+  text-align: center;
+  width: 100px;
+  color: #323232;
+  font-size: 48px;
+  font-weight:bold;
+  font-family: "Pill-Gothic-Bold,Arial,sans-serif";
+  border-radius:0px 3px 15px 0px;
+  background:rgba(255, 255, 255, 1);
+}
+
+.team-score-right{
+  border-radius:3px 0px 0px 15px;
+}
