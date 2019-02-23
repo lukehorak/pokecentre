@@ -33,6 +33,9 @@ exports.getSpecies = ( (line) => {
         if (hyphens.includes(speciesSplit[0].toLowerCase()) || speciesSplit[1].toLowerCase() === 'alola'){
             return species;
         }
+        if (speciesSplit[0].toLowerCase() === 'silvally'){
+            return speciesSplit[0];
+        }
         switch (speciesSplit[1].toLowerCase()){
             case '':
                 return speciesSplit[0];

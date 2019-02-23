@@ -1,5 +1,9 @@
-.upload-box-hidden{
+.upload-box{
   /* display:None; */
   width: 250px;
   margin:auto;
+}
+
+.logo-image{
+  width: 45%;
 }

@@ -12,12 +12,6 @@ class Uploader extends Component {
     this.state = {
       matchResult: null
     }
-    this.handleParse = this.handleParse.bind(this);
-  }
-
-  handleParse(response){
-    this.setState({matchResult:response});
-    console.warn("FARTS AND STUFF", response);
   }
 
   render() {
