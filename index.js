@@ -24,8 +24,13 @@ app.post('/api/upload', (req, res) => {
       fstream = fs.createWriteStream(tempPath);
       file.pipe(fstream);
       fstream.on('close', function (){
-        let matchHighlights = getHighlights.main(tempPath);
-        res.json(matchHighlights);
+        try{
+          let matchHighlights = getHighlights.main(tempPath);
+          res.json(matchHighlights);
+        }
+        catch(e){
+          res.status(500).send(e)
+        }
       })
     })
   //res.status(500).send();
