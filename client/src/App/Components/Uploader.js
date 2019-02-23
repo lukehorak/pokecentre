@@ -30,6 +30,9 @@ class Uploader extends Component {
           process: {
             onload: (res) => {
               this.props.getResult(res);
+            },
+            onerror: (res) => {
+              console.warn(res);
             }
           }
         }}
