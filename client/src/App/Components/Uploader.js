@@ -19,8 +19,7 @@ class Uploader extends Component {
     this.setState({matchResult:response});
     console.warn("FARTS AND STUFF", response);
   }
-  
-  //TODO - get response from server!
+
   render() {
     return (
       <div className="upload-container" >
