@@ -30,7 +30,7 @@ app.post('/api/upload', (req, res) => {
           res.json(matchHighlights);
         }
         catch(e){
-          res.status(500).send(e)
+          res.status(500).send(e.stack)
         }
       })
     })
