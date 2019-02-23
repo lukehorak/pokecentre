@@ -7,7 +7,7 @@ const getHighlights = require('./getHighlights.js');
 
 process.on('uncaughtException', function (error) {
   //console.log(error.stack);
-  res.status(500).send(error)
+  res.status(500).send(`Uncaught Exception:\n\n${error}`)
 });
 
 const app = express();
