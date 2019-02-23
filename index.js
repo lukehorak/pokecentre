@@ -7,7 +7,7 @@ const getHighlights = require('./getHighlights.js');
 
 process.on('uncaughtException', function (error) {
   //console.log(error.stack);
-  res.status(500).send(error.stack)
+  res.status(500).send(error)
 });
 
 const app = express();
@@ -34,7 +34,6 @@ app.post('/api/upload', (req, res) => {
         }
       })
     })
-  //res.status(500).send();
 
 });
 
