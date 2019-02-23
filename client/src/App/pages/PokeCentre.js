@@ -25,7 +25,7 @@ class PokeCentre extends Component {
   render() {
     return (
       <div className="App">
-        <img className="logo-image" src={logo} alt="Title"/>
+        <img className="title-image" src={logo} alt="Title"/>
         <div className="upload-box">
           <Uploader getResult={this.getResult}/>
         </div>
