@@ -49,7 +49,8 @@ exports.getSpecies = ( (line) => {
 })
 
 exports.getPlayer = ( (line)=> {
-    return line[1].split(/a: /)[0];
+    // toString() this in case of all-number username
+    return line[1].split(/a: /)[0].toString();
 });
 
 exports.getName = ( (line)=> {
@@ -147,8 +148,9 @@ exports.parseMatch = ( (matchFile)=> {
         let who;
         switch(battleLog[i][0]){
             case 'player':
+                // Same as getPlayer()
                 who = battleLog[i][1];
-                lineups[who].name = battleLog[i][2]
+                lineups[who].name = battleLog[i][2].toString()
                 break;
             case 'poke':
                 who = battleLog[i][1];
@@ -165,8 +167,17 @@ exports.parseMatch = ( (matchFile)=> {
                 exports.switchMon(activeMons, lookups, battleLog[i], lineups);
                 break;
             case 'move':
+                if (battleLog[i][4] === '[still]'){
+                    console.log('charging attack, nothing happens')
+                    break;
+                }   
+                else{
+                    exports.move(lineups, lookups, battleLog[i]);
+                    break;
+                }
+                
+            case '-anim':
                 exports.move(lineups, lookups, battleLog[i]);
-                break;
             case 'faint':
                 exports.knockout(activeMons, lineups, lookups, battleLog[i]);
         }
