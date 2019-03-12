@@ -29,10 +29,10 @@ exports.getSpecies = ( (line) => {
     let species = line[2].split(/,/)[0];
     if (species.includes('-')){
         let speciesSplit = species.split('-');
-        let hyphens = ['porygon', 'ho', 'rotom'];
-        if (hyphens.includes(speciesSplit[0].toLowerCase()) || speciesSplit[1].toLowerCase() === 'alola'){
-            return species;
-        }
+        // let hyphens = ['porygon', 'ho', 'rotom'];
+        // if (hyphens.includes(speciesSplit[0].toLowerCase()) || speciesSplit[1].toLowerCase() === 'alola'){
+        //     return species;
+        // }
         if (speciesSplit[0].toLowerCase() === 'silvally'){
             return speciesSplit[0];
         }
@@ -106,11 +106,14 @@ exports.knockout = ( (active, lineups, lookup, line)=>{
     try{
         lineups[winner].mons[scoredBy].kills += 1;
     }
-    catch{
+    catch(e){
         console.log('fucked up on ', scoredBy)
     }
 
     // faint loser
+    if (lineups[loser].mons[fainted] === undefined){
+        console.log(loser, exports.getName(line))
+    }
     lineups[loser].mons[fainted].isAlive = false;
 
     // remove killer from assists
@@ -164,6 +167,9 @@ exports.parseMatch = ( (matchFile)=> {
                 exports.switchMon(activeMons, lookups, battleLog[i], lineups);
                 break;
             case 'drag':
+                exports.switchMon(activeMons, lookups, battleLog[i], lineups);
+                break;
+                case 'replace':
                 exports.switchMon(activeMons, lookups, battleLog[i], lineups);
                 break;
             case 'move':
