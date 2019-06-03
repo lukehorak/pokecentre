@@ -77,18 +77,9 @@ module.exports = {
     knockout: function (active, lineups, lookup, line){
 
         let loser = this.getPlayer(line);
-        let winner = null;
         let fainted = lookup[this.getName(line)];     // lookup species from name on line
     
-        switch (loser){
-            case 'p1':
-                winner = 'p2';
-                break;
-    
-            case 'p2':
-                winner = 'p1';
-                break;
-        }
+        let winner = (loser === 'p1' ? 'p2' : 'p1');
         let scoredBy = active[winner];
     
         // give scorer a kill
