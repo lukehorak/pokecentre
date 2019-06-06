@@ -32,13 +32,9 @@ module.exports = {
             if (speciesSplit[0].toLowerCase() === 'silvally'){
                 return speciesSplit[0];
             }
-            switch (speciesSplit[1].toLowerCase()){
-                case '':
-                    return speciesSplit[0];
-                case 'mega':
-                    return speciesSplit[0];
-                default:
-                    return species;
+            const ignore = ['', 'mega', '*'];
+            if (ignore.indexOf(speciesSplit[1].toLowerCase()) > -1){
+                return speciesSplit[0]
             }
         }
         return species;
