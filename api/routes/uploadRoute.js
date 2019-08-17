@@ -3,9 +3,9 @@ const fs = require('fs');
 const getHighlights = require('../../getHighlights.js');
 const router = express.Router();
 
-process.on('uncaughtException', function (error) {
-  res.status(500).send(`Uncaught Exception:\n\n${error}`)
-});
+// process.on('uncaughtException', function (error) {
+//   res.status(500).send(`Uncaught Exception:\n\n${error}`)
+// });
 
 router.post('/', (req, res) => {
 
