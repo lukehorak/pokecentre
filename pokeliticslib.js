@@ -122,7 +122,7 @@ module.exports = {
         case 'poke':
           who = battleLog[i][1];
           // split gender from species
-          let pokemon = new this.Pokemon(this.getSpecies(battleLog[i]))
+          let pokemon = new Pokemon(this.getSpecies(battleLog[i]))
           lineups[who].mons[pokemon.species] = pokemon; // add species as attribute with key being species
           break;
         case 'teampreview':
