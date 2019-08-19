@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Entry from '../Components/pokedex/Entry'
+import Entry from '../Components/pokedex/Entry';
+import Navbar from '../Components/pokedex/Navbar';
 import '../styles/pokedex.css';
 
 
@@ -24,12 +25,15 @@ class Pokedex extends Component {
     const mons = [];
     if (this.state.pokemon){
       for (let mon of this.state.pokemon){
-        mons.push(<Entry species={mon.species} url={mon.sprite} key={mon.number}/>)
+        mons.push(<Entry species={mon.species} url={mon.sprite} types={mon.types} key={mon.number}/>)
       }
     }
     return(
       <>
-        {mons}
+        <Navbar />
+        <div className="entry-list">
+          {mons}
+        </div>
       </>
     )
   }

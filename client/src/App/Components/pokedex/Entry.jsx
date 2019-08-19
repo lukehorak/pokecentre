@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TypeList from './Types';
 import Sprite from './Sprite';
 
 class Entry extends Component {
@@ -7,8 +8,11 @@ class Entry extends Component {
 
     return (
       <div className="pokedex-entry">
-        <h1>{this.props.species}</h1>
         <Sprite url={this.props.url}/>
+        <div className="entry-right-side">
+          <h1 className="entry-name">{this.props.species}</h1>
+          <TypeList types={this.props.types} species={this.props.species}/>
+        </div>
       </div>
     )
   }
