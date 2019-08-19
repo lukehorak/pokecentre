@@ -4,6 +4,7 @@ import './App.css';
 import Home from './pages/Home';
 import TestData from './pages/TestData';
 import PokeCentre from './pages/PokeCentre';
+import Pokedex from './pages/Pokedex'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={PokeCentre}/>
+          <Route exact path="/pokedex" component={Pokedex}/>
           <Route exact path="/testData" component={TestData}/>
           <Route exact pat="/pc" component = {Home} />
         </Switch>
