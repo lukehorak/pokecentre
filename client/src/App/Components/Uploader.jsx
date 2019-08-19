@@ -18,18 +18,18 @@ class Uploader extends Component {
     return (
       <div className="upload-container" >
         <FilePond
-        server={{
-          url:"/api/upload",
-          process: {
-            onload: (res) => {
-              this.props.getResult(res);
-            },
-            onerror: (res) => {
-              console.warn(res);
+          server={{
+            url:"/api/upload",
+            process: {
+              onload: (res) => {
+                this.props.getResult(res);
+              },
+              onerror: (res) => {
+                console.warn(res);
+              }
             }
-          }
-        }}
-        name={"file"}
+          }}
+          name="file"
         />
       </div>
     );
