@@ -19,6 +19,24 @@ const dummyPokedexDB = [
     species: "venusaur",
     types: ["grass", "poison"],
     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
+  },
+  {
+    number: 004,
+    species: "charmander",
+    types: ["fire"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+  },
+  {
+    number: 005,
+    species: "charmeleon",
+    types: ["fire"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+  },
+  {
+    number: 006,
+    species: "charizard",
+    types: ["fire", "flying"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
   }
 ]
 
