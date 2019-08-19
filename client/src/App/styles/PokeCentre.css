@@ -1,3 +1,8 @@
+.App{
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+}
+
 .upload-box{
   /* display:None; */
   width: 250px;

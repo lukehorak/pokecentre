@@ -1,0 +1,10 @@
+.pokedex-entry {
+  display:flex;
+  margin: auto;
+  width: 60%;
+}
+
+.sprite {
+  width: 15em;
+  height: 15em;
+}
