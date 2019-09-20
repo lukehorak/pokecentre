@@ -83,4 +83,7 @@ body {
 .sprite {
   width: 15em;
   height: 15em;
+  border: 1px solid #aaa;
+  border-radius: 2rem;
+  background: lightskyblue;
 }
