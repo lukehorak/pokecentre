@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-
-const capitalize = (word) => {
-  const firstLetter = word[0].toUpperCase();
-  return `${firstLetter}${word.slice(1,)}`
-}
+import { capitalize } from '../../scripts/pokedexlib'
 
 class TypeBox extends Component {
   

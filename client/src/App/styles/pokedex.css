@@ -51,7 +51,7 @@ body {
 }
 
 .entry-type {
-  border: 2px solid #ccc;
+  
   border-radius: 0.4rem;
   padding: 0.3rem;
   text-align: center;
@@ -61,23 +61,33 @@ body {
 }
 
 .grass {
-  color: #A7DB8D;
+  border: 2px solid #A7DB8D;
+  color: #fff;
   background-color: #009900;
 }
 
 .poison {
-  color: #C183C1;
+  border: 2px solid #C183C1;
+  color: #fff;
   background-color: #682A68;
 }
 
 .fire {
-  color: #9C531F;
+  border: 2px solid #9C531F;
+  color: #fff;
   background-color: #F08030;
 }
 
 .flying {
-  color: #A890F0;
-  background-color: #D7C8F6;
+  border: 2px solid #D7C8F6;
+  color: #fff;
+  background-color: #A890F0;
+}
+
+.water {
+  border: 2px solid #9DB7F5;
+  color: #fff;
+  background-color: #6890F0;
 }
 
 .sprite {
