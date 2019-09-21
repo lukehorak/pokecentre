@@ -14,8 +14,11 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "connect-busboy": "0.0.2",
+    "dotenv": "^8.1.0",
     "express": "^4.16.4",
+    "knex": "^0.19.4",
     "mongoose": "^5.4.16",
+    "pg": "^7.12.1",
     "pokedex-promise-v2": "^3.2.0"
   }
 }
