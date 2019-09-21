@@ -37,6 +37,24 @@ const dummyPokedexDB = [
     species: "charizard",
     types: ["fire", "flying"],
     sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+  },
+  {
+    number: 008,
+    species: "squirtle",
+    types: ["water"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
+  },
+  {
+    number: 009,
+    species: "wartortle",
+    types: ["water"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
+  },
+  {
+    number: 006,
+    species: "blastoise",
+    types: ["water"],
+    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
   }
 ]
 
