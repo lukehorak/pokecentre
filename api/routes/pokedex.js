@@ -1,62 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const fs = require('fs');
 
-const dummyPokedexDB = [
-  {
-    number: 001,
-    species: "bulbasaur",
-    types: ["grass", "poison"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-  },
-  {
-    number: 002,
-    species: "ivysaur",
-    types: ["grass", "poison"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"
-  },
-  {
-    number: 003,
-    species: "venusaur",
-    types: ["grass", "poison"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png"
-  },
-  {
-    number: 004,
-    species: "charmander",
-    types: ["fire"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
-  },
-  {
-    number: 005,
-    species: "charmeleon",
-    types: ["fire"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
-  },
-  {
-    number: 006,
-    species: "charizard",
-    types: ["fire", "flying"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
-  },
-  {
-    number: 008,
-    species: "squirtle",
-    types: ["water"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
-  },
-  {
-    number: 009,
-    species: "wartortle",
-    types: ["water"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png"
-  },
-  {
-    number: 006,
-    species: "blastoise",
-    types: ["water"],
-    sprite: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png"
-  }
-]
+let dummyPokedexDB = fs.readFileSync('./api/temp-pokedex.json', 'utf8');
+dummyPokedexDB = JSON.parse(dummyPokedexDB)
 
 router.get('/', (req, res) => {
   console.log('sending entire pokedex')

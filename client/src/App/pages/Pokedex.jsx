@@ -25,7 +25,12 @@ class Pokedex extends Component {
     const mons = [];
     if (this.state.pokemon){
       for (let mon of this.state.pokemon){
-        mons.push(<Entry species={mon.species} url={mon.sprite} types={mon.types} key={mon.number}/>)
+        const types = [mon.type1];
+        if (mon.type2){
+          types.push(mon.type2)
+        }
+          
+        mons.push(<Entry species={mon.species} url={mon.sprite} types={types} key={mon.number}/>)
       }
     }
     return(
