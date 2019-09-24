@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Entry from '../Components/pokedex/Entry';
 import Navbar from '../Components/pokedex/Navbar';
+import Modal from '../Components/pokedex/Modal';
 import '../styles/pokedex.css';
 
 
@@ -9,7 +10,9 @@ class Pokedex extends Component {
   constructor(props){
     super(props);
     this.state = {
-      pokemon: null
+      pokemon: null,
+      showDeets: false,
+      modalMon: null
     }
   }
 
@@ -21,21 +24,25 @@ class Pokedex extends Component {
       })
   }
 
+  showModal = (pokemon) => {
+    this.setState({ showDeets: true , modalMon: pokemon});
+  };
+
+  hideModal = () => {
+    this.setState({ showDeets: false, modalMon: null});
+  };
+
   render(){
     const mons = [];
     if (this.state.pokemon){
       for (let mon of this.state.pokemon){
-        const types = [mon.type1];
-        if (mon.type2){
-          types.push(mon.type2)
-        }
-          
-        mons.push(<Entry species={mon.species} url={mon.sprite} types={types} key={mon.number}/>)
+        mons.push(<Entry pokemon={mon} key={mon.number} showModal={this.showModal} />)
       }
     }
     return(
       <>
         <Navbar />
+        {this.state.showDeets && <Modal pokemon={this.state.modalMon} hideModal={this.hideModal}/>}
         <div className="entry-list">
           {mons}
         </div>

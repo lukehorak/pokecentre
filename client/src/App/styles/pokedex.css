@@ -35,7 +35,7 @@ body {
   transition:width 0.5s;
 }
 
-.pokedex-entry:hover{
+.pokedex-entry-main:hover{
   width: 65%;
 }
 
@@ -174,4 +174,29 @@ body {
   border: 1px solid #aaa;
   border-radius: 2rem;
   background: lightskyblue;
+}
+
+.pokedex-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
 }
