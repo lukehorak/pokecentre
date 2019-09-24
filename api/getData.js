@@ -1,5 +1,6 @@
 require('dotenv').config();
 
+const fs = require('fs');
 const dex = require('pokedex-promise-v2');
 // Knex
 //const knexConfig  = require("../knexfile");
@@ -19,7 +20,7 @@ const getStats = (block) => {
   return baseStats;
 }
 
-for (let i = 1; i < 10; i++) {
+for (let i = 701; i < 807; i++) {
   promises.push(pokedex.resource(`/api/v2/pokemon/${i}`));
 }
 
@@ -28,6 +29,7 @@ for (let i = 1; i < 10; i++) {
 Promise.all(promises).then(data => {
     const result = data.map(pokemon => ({
       name: pokemon.name,
+      number: pokemon.id,
       species: pokemon.species.name,
       type1: pokemon.types[0].type.name,
       type2: pokemon.types[1] ? pokemon.types[1].type.name : null,
@@ -36,10 +38,15 @@ Promise.all(promises).then(data => {
       attack: pokemon.stats[4].base_stat,
       defense: pokemon.stats[3].base_stat,
       special_attack: pokemon.stats[2].base_stat,
-      special_defense: pokemon.stats[1].base_stat
+      special_defense: pokemon.stats[1].base_stat,
+      sprite: pokemon.sprites.front_default
 
     }));
-    console.log(result)
+    fs.writeFile('./pokedex(807).json', JSON.stringify(result), function (err) {
+      if (err) throw err;
+      console.log('Saved!');
+    });
+    //console.log(result)
   })
   .catch(error => {
     console.log(error)
