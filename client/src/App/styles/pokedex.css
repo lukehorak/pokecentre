@@ -28,6 +28,7 @@ body {
   justify-content: space-between;
   padding: 1rem;
   width: 60%;
+  height: 20rem;
   border: 1px solid #aaa;
   border-radius: 2rem;
   background-color: #fff;
@@ -169,8 +170,7 @@ body {
 }
 
 .sprite {
-  width: 15em;
-  height: 15em;
+  height: 70%;
   border: 1px solid #aaa;
   border-radius: 2rem;
   background: lightskyblue;
