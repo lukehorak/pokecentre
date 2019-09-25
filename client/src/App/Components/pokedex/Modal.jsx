@@ -60,12 +60,17 @@ class Modal extends Component {
           },
           }
         },
+        yaxis: {
+          forceNiceScale: false,
+          min: 0,
+          max: 260
+        },
         plotOptions: {
           bar: {
             barHeight: '90%',
             distributed: true,
             horizontal: true,
-            },
+          },
         },
         title: {
           text: 'Base Stats',
