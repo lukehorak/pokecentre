@@ -200,3 +200,8 @@ body {
 .display-none {
   display: none;
 }
+
+.stat-chart {
+  margin-right: auto;
+  padding-top: 1rem
+}
