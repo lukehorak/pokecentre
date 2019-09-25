@@ -4,7 +4,6 @@ import Sprite from './Sprite';
 import { capitalize } from '../../scripts/pokedexlib';
 
 
-// TODO - bar chart colours
 import Chart from 'react-apexcharts';
 
 class Modal extends Component {
@@ -47,9 +46,16 @@ class Modal extends Component {
             }
           }
         },
-        colors: [this.getColor(hp), this.getColor(speed), this.getColor(attack), this.getColor(defense), this.getColor(special_attack), this.getColor(special_defense)],
+        colors: [
+          this.getColor(hp),
+          this.getColor(speed),
+          this.getColor(attack),
+          this.getColor(defense),
+          this.getColor(special_attack),
+          this.getColor(special_defense)
+        ],
         xaxis: {
-          categories: ["hp", "speed", "attack", "defense", "special attack", "special defense"],
+          categories: ["HP", "Speed", "Attack", "Defense", "Special Attack", "Special Defense"],
           labels: {
             show: true,
             style: {
@@ -57,20 +63,20 @@ class Modal extends Component {
               fontSize: '12px',
               fontFamily: 'Helvetica, Arial, sans-serif',
               cssClass: 'apexcharts-xaxis-label',
-          },
+            },
           }
+        },
+        yaxis: {
+          forceNiceScale: false,
+          min: 0,
+          max: 260
         },
         plotOptions: {
           bar: {
             barHeight: '90%',
             distributed: true,
             horizontal: true,
-            },
-        },
-        title: {
-          text: 'Base Stats',
-          align: 'center',
-          floating: true
+          }
         },
       },
       series: [

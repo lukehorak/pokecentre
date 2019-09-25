@@ -4,7 +4,6 @@ import TeamBox from './teamBox';
 import Highlight from './highlight'
 import '../styles/highlight.css'
 
-// TODO - create component for each team's results, render each later (using mon results as props)
 
 class App extends Component {
 

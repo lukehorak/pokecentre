@@ -62,7 +62,7 @@ module.exports = {
     let offMon = lookup[line[1].split(/a: /)[1]];
     let defTrainer = line[3].split(/a: /)[0];
     let defMon = lookup[line[3].split(/a: /)[1]];
-    //  TODO [investigate] - why the fuck are you checking this?
+    //  TODO [investigate] - why are you checking this?
     if (offTrainer != defTrainer) {
       if (!lineups[defTrainer].mons[defMon].taggedBy.includes(offMon)) {
         lineups[defTrainer].mons[defMon].taggedBy.push(offMon);
