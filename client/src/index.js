@@ -10,5 +10,3 @@ render((
         <App/>
     </BrowserRouter>
 ), document.getElementById('root'));
-
-// TODO - bring in the rest of the component!
