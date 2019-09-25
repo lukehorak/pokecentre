@@ -10,13 +10,16 @@ import Chart from 'react-apexcharts';
 class Modal extends Component {
 
   getColor = (value) => {
-    if (value > 120){
-      return "#75B200";
+    if (value > 140){
+      return "#28E2AA"
     }
     if (value > 100){
-      return "#DDD75A";
+      return "#75B200";
     }
-    if (value > 80){
+    if (value > 90){
+      return "#a9dd5a";
+    }
+    if (value > 60){
       return "#F8BC4C"
     }
     return "#E56565";
@@ -41,50 +44,46 @@ class Modal extends Component {
             dynamicAnimation: {
               enabled: true,
               speed: 800
+            }
           }
-        }
         },
+        colors: [this.getColor(hp), this.getColor(speed), this.getColor(attack), this.getColor(defense), this.getColor(special_attack), this.getColor(special_defense)],
         xaxis: {
-          categories: ["hp", "speed", "attack", "defense", "special attack", "special defense"]
-        }
-      },
-      plotOptions: {
-        bar: {
-          barHeight: '90%',
-          distributed: true,
-          horizontal: true,
-          colors: {
-            ranges: [{ from: 0, to: 79, color: "#75B200"},
-              { from: 80, to: 99, color: "#DDD75A"},
-              { from: 100, to: 119, color: "#F8BC4C"},
-              { from: 120, to: 500, color: "#E56565"},
-            ],
-            backgroundBarColors: [],
-            backgroundBarOpacity: 1
+          categories: ["hp", "speed", "attack", "defense", "special attack", "special defense"],
+          labels: {
+            show: true,
+            style: {
+              colors: [],
+              fontSize: '12px',
+              fontFamily: 'Helvetica, Arial, sans-serif',
+              cssClass: 'apexcharts-xaxis-label',
           },
-        }
-      },
-      //colors: [this.getColor(hp), this.getColor(speed), this.getColor(attack), this.getColor(defense), this.getColor(special_attack), this.getColor(special_defense)],
-      title: {
-        text: 'Base Stats',
-        align: 'center',
-        floating: true
+          }
+        },
+        plotOptions: {
+          bar: {
+            barHeight: '90%',
+            distributed: true,
+            horizontal: true,
+            },
+        },
+        title: {
+          text: 'Base Stats',
+          align: 'center',
+          floating: true
+        },
       },
       series: [
         {
           data: [hp, speed, attack, defense, special_attack, special_defense]
         }
       ]
-      
-    };
-  }
-
-  componentDidMount () {
-  }
+    }
+  };
   
   render() {
 
-    const { sprite, species, hp, speed, attack, defense, special_attack, special_defense } = this.props.pokemon;
+    const { sprite, species } = this.props.pokemon;
     const types = [this.props.pokemon.type1];
     if(this.props.pokemon.type2) {
       types.push(this.props.pokemon.type2);
@@ -97,12 +96,11 @@ class Modal extends Component {
           <div className="entry-right-side">
             <h1 className="entry-name">{capitalize(species)}</h1>
             <TypeList types={types} species={species}/>
-            <Chart
+            <Chart className={"stat-chart"}
               options={this.state.options}
               series={this.state.series}
               type="bar"
-              width="500"
-              colors={[this.getColor(hp), this.getColor(speed), this.getColor(attack), this.getColor(defense), this.getColor(special_attack), this.getColor(special_defense)]}
+              width="450"
             />
           </div>
         </div>
