@@ -170,7 +170,7 @@ body {
 }
 
 .sprite {
-  height: 70%;
+  height: 15em;
   border: 1px solid #aaa;
   border-radius: 2rem;
   background: lightskyblue;
