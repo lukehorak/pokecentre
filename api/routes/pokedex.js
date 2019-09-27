@@ -6,8 +6,22 @@ let dummyPokedexDB = fs.readFileSync('./api/temp-pokedex.json', 'utf8');
 dummyPokedexDB = JSON.parse(dummyPokedexDB)
 
 router.get('/', (req, res) => {
-  console.log('sending entire pokedex')
-  res.json(dummyPokedexDB);
+  
+  let { limit, offset } = req.query;
+
+  // If there's a limit, check for offset and supply requested range
+  if (limit){
+    if (offset === undefined){
+      offset = 0;
+    }
+    const results = dummyPokedexDB.slice(offset, parseInt(offset)+parseInt(limit));
+    res.json(results);
+  }
+  else{
+
+    console.log('sending entire pokedex')
+    res.json(dummyPokedexDB);
+  }
 })
 
 router.get('/pokemon/:id', (req, res) => {
