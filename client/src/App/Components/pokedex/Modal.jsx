@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import TypeList from './Types';
 import Sprite from './Sprite';
 import Graph from './Graph';
+import Moveset from './Moveset';
 import { capitalize } from '../../scripts/pokedexlib';
 
 class Modal extends Component {
@@ -16,12 +17,22 @@ class Modal extends Component {
 
     return (
       <div className="pokedex-modal" onClick={this.props.hideModal}>
-        <div className="pokedex-entry modal-main">
-          <Sprite url={sprite}/>
-          <div className="entry-right-side">
-            <h1 className="entry-name">{capitalize(species)}</h1>
-            <TypeList types={types} species={species}/>
-            <Graph pokemon={this.props.pokemon} />
+        <div className="modal-main">
+          <div className="modal-entry">
+
+            <div className="modal-top">
+              <Sprite url={sprite}/>
+              <div className="entry-right-side">
+                <h1 className="entry-name">{capitalize(species)}</h1>
+                <TypeList types={types} species={species}/>
+                <Graph pokemon={this.props.pokemon} />
+              </div>
+            </div>
+
+            <div className="modal-bottom">
+              <Moveset />
+            </div>
+
           </div>
         </div>
       </div>

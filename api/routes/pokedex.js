@@ -8,13 +8,13 @@ dummyPokedexDB = JSON.parse(dummyPokedexDB)
 router.get('/', (req, res) => {
   
   let { limit, offset } = req.query;
-  console.log(`limit: ${limit}; offset: ${offset}`)
+
+  // If there's a limit, check for offset and supply requested range
   if (limit){
     if (offset === undefined){
       offset = 0;
     }
     const results = dummyPokedexDB.slice(offset, parseInt(offset)+parseInt(limit));
-    console.log(offset+limit)
     res.json(results);
   }
   else{
