@@ -5,6 +5,7 @@ import Modal from '../Components/pokedex/Modal';
 import '../styles/pokedex.css';
 
 
+
 class Pokedex extends Component {
 
   constructor(props){

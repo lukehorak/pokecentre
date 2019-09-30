@@ -4,8 +4,6 @@ import ReactTable from 'react-table';
 import "react-table/react-table.css";
 import { capitalize } from '../../scripts/pokedexlib';
 
-// TODO - Actually populate this data
-
 class Moveset extends Component {
 
   
@@ -17,6 +15,7 @@ class Moveset extends Component {
         style: {
           textAlign: "center"
         },
+        Cell: ({row}) => (capitalize(row.move))
       },
       {
         Header: "Type",
@@ -24,49 +23,52 @@ class Moveset extends Component {
         style: {
           textAlign: "center"
         },
+        Cell: ({row}) => (<TypeBox type={row.type}/>)
       },
       {
-        Header: "Category",
-        accessor: "category",
+        Header: "Damage Class",
+        accessor: "damage_class",
         style: {
           textAlign: "center"
         },
       },
       {
-        Header: "Learned Via",
-        accessor: "learned_by",
+        Header: "Power",
+        accessor: "power",
+        style: {
+          textAlign: "center"
+        },
+        Cell: ({row}) => (row.power ? row.power : "N/A")
+      },
+      {
+        Header: "Accuracy",
+        accessor: "accuracy",
+        style: {
+          textAlign: "center"
+        },
+        Cell: ({row}) => (row.power ? row.accuracy : "N/A")
+      },
+      {
+        Header: "Priority",
+        accessor: "priority",
+        style: {
+          textAlign: "center"
+        },
+      },
+      {
+        Header: "PP",
+        accessor: "pp",
         style: {
           textAlign: "center"
         },
       }
     ]
 
-    const demoData = [
-      {
-        move: "Scratch",
-        type: <TypeBox type="normal" />,
-        category: "Physical",
-        learned_by: "level"
-      },
-      {
-        move: "Dragon Dance",
-        type: <TypeBox type="dragon"/>,
-        category: "Status",
-        learned_by: "egg"
-      },
-      {
-        move: "Ember",
-        type: <TypeBox type="fire"/>,
-        category: "Special",
-        learned_by: "level"
-      },
-    ]
-
-
     return (
       <ReactTable
-        data={demoData}
+        data={this.props.moveList}
         columns={columns}
+        defaultPageSize={150}
         style={{
           height: "25rem" // This will force the table body to overflow and scroll, since there is not enough room
         }}

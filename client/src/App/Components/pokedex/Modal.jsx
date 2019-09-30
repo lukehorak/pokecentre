@@ -5,8 +5,25 @@ import Graph from './Graph';
 import Moveset from './Moveset';
 import { capitalize } from '../../scripts/pokedexlib';
 
+import testMove from '../../scripts/getMoves'
+
+// TODO - optimize this! its super slow
+
 class Modal extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = { moveList:[] }
+  }
   
+  componentDidMount(){
+    testMove(this.props.pokemon.species)
+    .then(data => this.setState({moveList: data}))
+  }
+
+  componentWillUnmount(){
+    this.setState({moveList: []})
+  }
   render() {
 
     const { sprite, species } = this.props.pokemon;
@@ -30,7 +47,7 @@ class Modal extends Component {
             </div>
 
             <div className="modal-bottom">
-              <Moveset />
+              <Moveset moveList={this.state.moveList}/>
             </div>
 
           </div>
