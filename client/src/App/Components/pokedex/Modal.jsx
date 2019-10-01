@@ -4,16 +4,19 @@ import Sprite from './Sprite';
 import Graph from './Graph';
 import Moveset from './Moveset';
 import { capitalize } from '../../scripts/pokedexlib';
+import Loading from './Loading';
 
 import testMove from '../../scripts/getMoves'
 
 // TODO - optimize this! its super slow
 
+// TODO - loading gif
+
 class Modal extends Component {
 
   constructor(props){
     super(props);
-    this.state = { moveList:[] }
+    this.state = { moveList: null }
   }
   
   componentDidMount(){
@@ -22,7 +25,7 @@ class Modal extends Component {
   }
 
   componentWillUnmount(){
-    this.setState({moveList: []})
+    this.setState({moveList: null})
   }
   render() {
 
@@ -33,7 +36,7 @@ class Modal extends Component {
     }
 
     return (
-      <div className="pokedex-modal" onClick={this.props.hideModal}>
+       <div className="pokedex-modal" onClick={this.props.hideModal}>
         <div className="modal-main">
           <div className="modal-entry">
 
@@ -47,7 +50,8 @@ class Modal extends Component {
             </div>
 
             <div className="modal-bottom">
-              <Moveset moveList={this.state.moveList}/>
+              {!this.state.moveList && <Loading className="loading-gif" loadingText="Loading moveset..."/>}
+              {this.state.moveList && <Moveset moveList={this.state.moveList}/> }
             </div>
 
           </div>

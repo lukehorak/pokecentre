@@ -209,6 +209,12 @@ body {
   justify-content: space-between;
 }
 
+.modal-bottom{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .display-block {
   display: block;
 }
@@ -220,4 +226,8 @@ body {
 .stat-chart {
   margin-right: auto;
   padding-top: 1rem
+}
+
+.loading-gif{
+  margin: auto
 }
