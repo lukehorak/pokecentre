@@ -10,8 +10,6 @@ import testMove from '../../scripts/getMoves'
 
 // TODO - optimize this! its super slow
 
-// TODO - loading gif
-
 class Modal extends Component {
 
   constructor(props){
@@ -51,7 +49,7 @@ class Modal extends Component {
 
             <div className="modal-bottom">
               {!this.state.moveList && <Loading className="loading-gif" loadingText="Loading moveset..."/>}
-              {this.state.moveList && <Moveset moveList={this.state.moveList}/> }
+              {this.state.moveList && <Moveset moveList={this.state.moveList} moveCount={this.state.moveList.length}/> }
             </div>
 
           </div>
