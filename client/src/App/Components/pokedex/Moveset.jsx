@@ -5,7 +5,6 @@ import "react-table/react-table.css";
 import { capitalize } from '../../scripts/pokedexlib';
 
 class Moveset extends Component {
-
   
   render() {
     const columns = [
@@ -68,7 +67,7 @@ class Moveset extends Component {
       <ReactTable
         data={this.props.moveList}
         columns={columns}
-        defaultPageSize={150}
+        defaultPageSize={this.props.moveCount}
         style={{
           height: "25rem" // This will force the table body to overflow and scroll, since there is not enough room
         }}
