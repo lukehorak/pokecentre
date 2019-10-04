@@ -6,6 +6,17 @@ import Moveset from './Moveset';
 import { capitalize } from '../../scripts/pokedexlib';
 import Loading from './Loading';
 
+
+/*
+TODO - try moving the data processing server-side for performance (sending less data to client)
+Steps:
+
+0. Rename testMove to something getMoves
+1. move getMoves to api call
+2. move the processing to api call
+3. return post-processed data from endpoint
+
+*/
 import testMove from '../../scripts/getMoves'
 
 // TODO - optimize this! its super slow
