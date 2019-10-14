@@ -13,7 +13,7 @@ const getMove = (moveData) => {
     damage_class: moveData.damage_class.name,
   })
 }
-const testMove = async (species) =>{
+const getAllMoves = async (species) =>{
   const { moves } = await dex.getPokemonByName(species);
   let moveData;
   const moveList = [];
@@ -25,4 +25,4 @@ const testMove = async (species) =>{
   return moveList;
 }
 
-export default testMove;
+export default getAllMoves;
