@@ -11,13 +11,14 @@ import Loading from './Loading';
 TODO - try moving the data processing server-side for performance (sending less data to client)
 Steps:
 
-0. Rename testMove to something getMoves
-1. move getMoves to api call
-2. move the processing to api call
-3. return post-processed data from endpoint
+0. Rename testMove to something getMoves      CHECK
+1. move getAllMoves to api call               CHECK
+2. move the processing to api call            CHECK
+3. return post-processed data from endpoint   CHECK
+4. fill data in components from endpoint      CHECK
 
 */
-import testMove from '../../scripts/getMoves'
+import getAllMoves from '../../scripts/getMoves'
 
 // TODO - optimize this! its super slow
 
@@ -29,7 +30,7 @@ class Modal extends Component {
   }
   
   componentDidMount(){
-    testMove(this.props.pokemon.species)
+    getAllMoves(this.props.pokemon.species)
     .then(data => this.setState({moveList: data}))
   }
 
