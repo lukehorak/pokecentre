@@ -1,36 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs');
-const Pokedex = 
-require('pokedex-promise-v2');
-const dex = new Pokedex();
 
-/////////// TODO - any way to clean this up?
-
-const getMove = (moveData) => {
-  return ({
-    move: moveData.name.replace('-', ' '),
-    power: moveData.power,
-    accuracy: moveData.accuracy,
-    type: moveData.type.name,
-    pp: moveData.pp,
-    priority: moveData.priority,
-    damage_class: moveData.damage_class.name,
-  })
-}
-const getAllMoves = async (species) =>{
-  const { moves } = await dex.getPokemonByName(species);
-  let moveData;
-  const moveList = [];
-
-  for (let move of moves){
-    moveData = await dex.getMoveByName(move.move.name);
-    moveList.push(getMove(moveData));
-  }
-  return moveList;
-}
-
-//////////
+const { getAllMoves } = require('../../PokecentreAPI');
 
 let dummyPokedexDB = fs.readFileSync('./api/temp-pokedex.json', 'utf8');
 dummyPokedexDB = JSON.parse(dummyPokedexDB)

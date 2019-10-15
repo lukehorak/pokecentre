@@ -6,22 +6,6 @@ import Moveset from './Moveset';
 import { capitalize } from '../../scripts/pokedexlib';
 import Loading from './Loading';
 
-
-/*
-TODO - try moving the data processing server-side for performance (sending less data to client)
-Steps:
-
-0. Rename testMove to something getMoves      CHECK
-1. move getAllMoves to api call               CHECK
-2. move the processing to api call            CHECK
-3. return post-processed data from endpoint   CHECK
-4. fill data in components from endpoint      CHECK
-
-*/
-import getAllMoves from '../../scripts/getMoves'
-
-// TODO - optimize this! its super slow
-
 class Modal extends Component {
 
   constructor(props){
@@ -30,7 +14,8 @@ class Modal extends Component {
   }
   
   componentDidMount(){
-    getAllMoves(this.props.pokemon.species)
+    fetch(`/api/pokedex/pokemon/${this.props.pokemon.species}/moves`)
+    .then(response => response.json())
     .then(data => this.setState({moveList: data}))
   }
 
