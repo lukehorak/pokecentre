@@ -8,7 +8,9 @@ class TypeBox extends Component {
   render() {
 
     return (
-      <span className={`entry-type ${this.props.type}`}>{capitalize(this.props.type)}</span>
+      <div className={`entry-type ${this.props.type}`}>
+        <span>{capitalize(this.props.type)}</span>
+      </div>
     )
   }
 }
