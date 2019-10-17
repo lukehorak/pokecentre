@@ -73,6 +73,7 @@ class Moveset extends Component {
         style={{
           height: "25rem" // This will force the table body to overflow and scroll, since there is not enough room
         }}
+        showPagination={false}
       />
     )
   }
