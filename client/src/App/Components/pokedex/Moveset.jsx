@@ -5,6 +5,10 @@ import "react-table/react-table.css";
 import { capitalize } from '../../scripts/pokedexlib';
 
 // TODO - format this!
+// Fixed width types: DONE
+// Max width names:
+// Capitalize all words in names:
+// 
 
 class Moveset extends Component {
   
