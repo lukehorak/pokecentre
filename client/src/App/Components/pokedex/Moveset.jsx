@@ -5,6 +5,10 @@ import "react-table/react-table.css";
 import { capitalize } from '../../scripts/pokedexlib';
 
 // TODO - format this!
+// Fixed width types: DONE
+// Max width names:
+// Capitalize all words in names:
+// 
 
 class Moveset extends Component {
   
@@ -73,6 +77,7 @@ class Moveset extends Component {
         style={{
           height: "25rem" // This will force the table body to overflow and scroll, since there is not enough room
         }}
+        showPagination={false}
       />
     )
   }

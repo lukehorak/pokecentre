@@ -48,6 +48,7 @@ body {
 }
 
 .type-list {
+  display: flex;
   list-style: none;
 }
 
@@ -57,7 +58,7 @@ body {
   text-align: center;
   font-size: 1rem;
   margin: 0.2rem;
-  width: 100rem;
+  width: 5rem;
 }
 
 .grass {
