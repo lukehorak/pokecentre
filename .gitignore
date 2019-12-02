@@ -30,3 +30,4 @@ npm-debug.log
 client/package-lock.json
 api/getData.js
 package-lock.json
+.env
