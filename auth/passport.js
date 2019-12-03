@@ -1,5 +1,9 @@
+require('dotenv').config();
+const ENV = process.env.ENV || 'development';
+
 const passport = require('passport');
-const knex = require('../db/connection');
+const knexConfig  = require("./knexfile");
+const knex        = require("knex")(knexConfig[ENV]);
 
 module.exports = () => {
 

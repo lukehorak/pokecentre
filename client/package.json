@@ -7,6 +7,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "apexcharts": "^3.8.6",
+    "bcrypt": "^3.0.7",
     "canvasjs": "^1.8.1",
     "filepond": "^4.2.0",
     "i": "^0.3.6",
