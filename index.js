@@ -1,14 +1,19 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
 const busboy = require('connect-busboy');
 const passport = require('passport');
+const session = require('express-session');
+const flash = require('express-flash')
 
 // TODO - finish user auth config
+const ENV = process.env.ENV || 'development';
 
 // knex
 const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
-const knexLogger  = require('knex-logger');
+//const knexLogger  = require('knex-logger');
 
 // Require Routes
 const uploadRoute = require('./api/routes/uploadRoute');
@@ -29,28 +34,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
-passport.serializeUser(function(user, done){
-  done(null, user.id);
-
-});
-passport.deserializeUser(function(id, cb){
-  knex('users')
-    .where({id: id})
-    .then(([user]) => {
-      if (!user) { done (new Error('User not found, Whoops! id:' + id))}  
-      done(null, user);
-    })
-})
-
-// Session
-app.use(session({
-  secret: process.env.SECRET_KEY, //GENERATE SECRET
-  resave: true,
-  saveUninitialized: true,
-  store: new FileStore({path: './data/tmp/session'})
-}))
-app.use(passport.initialize())
-app.use(passport.session())
 
 // Use Routes
 app.use('/api/upload', uploadRoute);
