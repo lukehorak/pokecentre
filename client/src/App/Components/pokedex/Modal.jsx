@@ -16,7 +16,10 @@ class Modal extends Component {
   componentDidMount(){
     fetch(`/api/pokedex/pokemon/${this.props.pokemon.species}/moves`)
     .then(response => response.json())
-    .then(data => this.setState({moveList: data}))
+    .then(data => {
+      console.log(data);
+      this.setState({moveList: data})
+  })
   }
 
   componentWillUnmount(){
