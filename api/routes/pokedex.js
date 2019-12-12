@@ -28,10 +28,7 @@ router.get('/', (req, res) => {
 
 router.get('/pokemon/:id/moves', (req, res) => {
   getAllMoves(req.params.id)
-    .then(data => {
-      console.log(data);
-      res.json(data)
-    });
+    .then(data => res.json(data));
 })
 
 router.get('/pokemon/:id', (req, res) => {
