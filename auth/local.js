@@ -4,7 +4,7 @@ const ENV = process.env.ENV || 'development';
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const init = require('./passport');
-const knexConfig  = require("./knexfile");
+const knexConfig  = require("../knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
 const authHelpers = require('./_helpers');
 
