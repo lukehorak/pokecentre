@@ -1,11 +1,11 @@
 require('dotenv').config();
 const ENV = process.env.ENV || 'development';
 
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 
-const knexConfig  = require("./knexfile");
+const knexConfig  = require("../knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
-const authHelpers = require('./_helpers');
+
 
 function comparePass(userPassword, dbPassword) {
   return bcrypt.compareSync(userPassword, dbPassword);
