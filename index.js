@@ -7,7 +7,6 @@ const passport = require('passport');
 const session = require('express-session');
 const flash = require('express-flash')
 
-// TODO - finish user auth config
 const ENV = process.env.ENV || 'development';
 
 // knex

@@ -5,23 +5,18 @@ const authHelpers = require('../../auth/_helpers');
 const passport = require('../../auth/local');
 
 
-
-// TODO - add user and admin endpoints!
-
 router.post('/register', (req, res) => {
   authHelpers.createUser(req, res)
-    .then((response) => {
-      passport.authenticate('local', (err, user, info) => {
-        if (user) { handleResponse(res, 200, 'success'); }
-      })(req, res, next);
+    .then((user) => {
+      handleLogin(res, user[0]);
     })
+    .then(() => { handleResponse(res, 200, 'success'); })
     .catch((err) => { handleResponse(res, 500, 'error')});
-
 })
 
 router.post('/login', (req, res) => {
   passport.authenticate('local', (err, user, info) => {
-    if (err) { handleResponse(res, 500, 'error')};
+    if (err) { handleResponse(res, 500, 'error'); }
     if(!user) { handleResponse(res, 404, 'User not found!')};
     if(user) {
       req.logIn(user, function(err) {
