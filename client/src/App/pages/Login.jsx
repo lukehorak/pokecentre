@@ -5,7 +5,7 @@ class Login extends Component {
   render() {
     return (
       <div className="App">
-        <LoginForm />
+        <LoginForm url='/api/auth/register'/>
       </div>
     );
   }

@@ -5,7 +5,8 @@ const path = require('path');
 const busboy = require('connect-busboy');
 const passport = require('passport');
 const session = require('express-session');
-const flash = require('express-flash')
+const flash = require('express-flash');
+const bodyParser = require('body-parser');
 
 const ENV = process.env.ENV || 'development';
 
@@ -14,15 +15,13 @@ const knexConfig  = require("./knexfile");
 const knex        = require("knex")(knexConfig[ENV]);
 //const knexLogger  = require('knex-logger');
 
-// Require Routes
-const uploadRoute = require('./api/routes/uploadRoute');
-const testDataRoute = require('./api/routes/testData');
-const pokedexRoute = require('./api/routes/pokedex');
-const authRoute = require('./api/routes/auth');
-const userRoute = require('./api/routes/user');
-
 // Configs
 const app = express();
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+// parse application/json
+app.use(bodyParser.json())
+
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use(busboy());
 // Passport
@@ -35,6 +34,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 
+
+// Require Routes
+const uploadRoute = require('./api/routes/uploadRoute');
+const testDataRoute = require('./api/routes/testData');
+const pokedexRoute = require('./api/routes/pokedex');
+const authRoute = require('./api/routes/auth');
+const userRoute = require('./api/routes/user');
 
 // Use Routes
 app.use('/api/upload', uploadRoute);
