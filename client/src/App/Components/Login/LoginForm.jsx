@@ -23,7 +23,7 @@ class LoginForm extends Component {
   render() {
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="cred-form" onSubmit={this.handleSubmit}>
         <h2>Login</h2>
         <label htmlFor="email">Email</label>
         <input type="email" name="email" />
