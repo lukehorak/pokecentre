@@ -1,6 +1,7 @@
+/*TODO - finish styling form*/
+
 .App{
   font-family: 'Poppins', sans-serif;
-  /* font-family: 'Roboto', sans-serif; */
 }
 
 .upload-box{
@@ -11,4 +12,24 @@
 
 .title-image{
   width: 40%;
+}
+
+/*LOGIN FORM*/
+
+.cred-form{
+  display:flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+  width: 45em;
+  border: 1px solid #aaa;
+  border-radius: 2rem;
+  background-color: #eee;
+}
+
+.cred-form > input {
+  margin: 1rem auto;
+  width: 70%;
+
 }
