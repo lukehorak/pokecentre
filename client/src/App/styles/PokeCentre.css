@@ -30,6 +30,9 @@
 
 .cred-form > input {
   margin: 1rem auto;
-  width: 70%;
-
+  width: 50%;
+  height: 2em;
+  padding: 0.1rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
 }
