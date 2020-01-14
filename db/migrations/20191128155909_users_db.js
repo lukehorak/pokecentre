@@ -7,7 +7,7 @@ exports.up = (knex, Promise) => {
     table.dateTime('deletedAt').nullable();
     table.boolean('admin').notNullable().defaultTo(false)
 
-    table.string('email');
+    table.string('username');
     table.string('password');
   })
 };

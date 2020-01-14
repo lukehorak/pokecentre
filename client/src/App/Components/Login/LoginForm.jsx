@@ -7,7 +7,7 @@ class LoginForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const data = {
-      "email": event.target.email.value,
+      "username": event.target.username.value,
       "password": event.target.password.value
     };
 
@@ -25,8 +25,8 @@ class LoginForm extends Component {
     return (
       <form className="cred-form" onSubmit={this.handleSubmit}>
         <h2>Login</h2>
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" />
+        <label htmlFor="username">Email</label>
+        <input type="email" name="username" />
         
         <label htmlFor="password">Password </label>
         <input type="password" name="password" />
