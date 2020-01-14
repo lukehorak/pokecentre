@@ -17,6 +17,7 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
   passport.authenticate('local', (err, user, info) => {
+    // TODO - user is "false", why??
     if (err) { handleResponse(res, 500, 'error'); }
     if(!user) { 
       console.log('user not found!')
