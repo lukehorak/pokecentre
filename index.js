@@ -40,14 +40,12 @@ const uploadRoute = require('./api/routes/uploadRoute');
 const testDataRoute = require('./api/routes/testData');
 const pokedexRoute = require('./api/routes/pokedex');
 const authRoute = require('./api/routes/auth');
-const userRoute = require('./api/routes/user');
 
 // Use Routes
 app.use('/api/upload', uploadRoute);
 app.use('/api/testData', testDataRoute);
 app.use('/api/pokedex', pokedexRoute);
-app.use('/api/auth', authRoute)
-app.use('/api/user', userRoute)
+app.use('/api/auth', authRoute);
 
 app.get('*', (req,res) => {
   res.sendFile(path.join(__dirname+'/client/build/index.html'));
