@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import logo from '../assets/PoKeLiTiCs.png';
 
 class Sprite extends Component {
   
@@ -6,7 +7,7 @@ class Sprite extends Component {
 
     return (
       <div className="nav">
-        <h2 className="title-text">Pokedex</h2>
+        <img className="title-image" src={logo} alt="Title"/> 
       </div>
     )
   }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Entry from '../Components/pokedex/Entry';
-import Navbar from '../Components/pokedex/Navbar';
+import Navbar from '../Components/Navbar';
 import Modal from '../Components/pokedex/Modal';
 import '../styles/pokedex.css';
 
@@ -42,7 +42,7 @@ class Pokedex extends Component {
     }
     return(
       <>
-        <Navbar />
+        {/* <Navbar /> */}
         {this.state.showDeets && <Modal pokemon={this.state.modalMon} hideModal={this.hideModal}/>}
         <div className="entry-list">
           {mons}
