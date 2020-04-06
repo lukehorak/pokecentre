@@ -6,11 +6,13 @@ import TestData from './pages/TestData';
 import PokeCentre from './pages/PokeCentre';
 import Pokedex from './pages/Pokedex'
 import Login from './pages/Login';
+import Navbar from './Components/Navbar'
 
 class App extends Component {
   render() {
     const App = () => (
       <div>
+        <Navbar />
         <Switch>
           <Route exact path="/" component={PokeCentre}/>
           <Route exact path="/pokedex" component={Pokedex}/>
